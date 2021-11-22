@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cabana.BLL.Arriendo", "Caba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cabana.BLL.Ususario", "Cabana.BLL.Ususario\Cabana.BLL.Ususario.csproj", "{BE9349C4-E95F-4C8B-9854-E21AD183F34D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cabana.Web", "Cabana.Web\Cabana.Web.csproj", "{4C64496D-BD5A-4C17-B68C-3319EF140992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cabana.Web", "Cabana.Web\Cabana.Web.csproj", "{4C64496D-BD5A-4C17-B68C-3319EF140992}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
