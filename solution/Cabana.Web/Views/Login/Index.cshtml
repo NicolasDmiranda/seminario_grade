@@ -2,4 +2,47 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0428c20732.js" crossorigin="anonymous"></script>   
+    <title>Login</title>
+</head>
+<body style="background: lightgray;">
+    <div class="container text-center  d-flex justify-content-center py-5">
+        <form class="p-5 bg-light text-dark" action="" method="POST">
+            <div class="form-group">
+                <h2 class="text-center">Iniciar Sesión</h2>
+                <h3 class="text-center">de Usuario</h3><br>
+                <label for="usuario">Usuario:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  placeholder="Usuario" name="USUARIO">
+                </div>  
+            </div>
+            <div class="form-group">
+                <label for="clave">Contraseña:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input type="password" class="form-control"  placeholder="*******" name="PSW">
+                </div> <br>
+                <a href="@Url.Action("Index","Registrar")" class="text-link">¿No tienes una cuenta? Registrate Aquí.</a>   
+            </div>
+            <button type="submit" class="btn btn-info">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>
