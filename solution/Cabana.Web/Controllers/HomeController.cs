@@ -1,12 +1,12 @@
 ﻿using Cabana.BLL.Usuario.BusinessImplement;
 using Cabana.BLL.Usuario.BusinessInteface;
-using Cabana.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Cabana.Web.Controllers
 {
-    public class HomeController : Controller
+    //[Authorize]
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUsuarioService _usuarioService;
@@ -19,6 +19,7 @@ namespace Cabana.Web.Controllers
 
         public IActionResult Index()
         {
+            SetFullName();
             var o = _usuarioService.Login(new BLL.Usuario.DataTransferObject.UsuarioDto { Clave = "hola1", NombreUsuario = "hola1" });
             return View();
         }
@@ -46,12 +47,6 @@ namespace Cabana.Web.Controllers
         public IActionResult Registro()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
