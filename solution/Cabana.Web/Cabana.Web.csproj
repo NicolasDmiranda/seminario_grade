@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cabana.BLL.Ususario\Cabana.BLL.Usuario.csproj" />
+  </ItemGroup>
+
 </Project>

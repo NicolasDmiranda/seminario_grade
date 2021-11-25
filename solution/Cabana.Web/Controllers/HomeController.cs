@@ -1,4 +1,6 @@
-﻿using Cabana.Web.Models;
+﻿using Cabana.BLL.Usuario.BusinessImplement;
+using Cabana.BLL.Usuario.BusinessInteface;
+using Cabana.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,14 +9,17 @@ namespace Cabana.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUsuarioService _usuarioService;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            _usuarioService = new UsuarioServiceImpl();
         }
 
         public IActionResult Index()
         {
+            var o = _usuarioService.Login(new BLL.Usuario.DataTransferObject.UsuarioDto { Clave = "hola1", NombreUsuario = "hola1" });
             return View();
         }
 
