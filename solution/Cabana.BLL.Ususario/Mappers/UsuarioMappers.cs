@@ -23,5 +23,21 @@ namespace Cabana.BLL.Usuario.Mappers
                 Correo = entity.Correo
             };
         }
+
+        public static DAL.Models.Usuario ToEntity(UsuarioDto dto)
+        {
+            return new DAL.Models.Usuario
+            {
+                UsuarioModificacion = dto.UsuarioModificacion,
+                UsuarioId = dto.UsuarioId,
+                UsuarioCreacion = dto.UsuarioCreacion,
+                NombreUsuario = dto.NombreUsuario,
+                FechaModificacion = dto.FechaModificacion,
+                FechaCreacion = dto.FechaCreacion,
+                NombreCompleto = dto.NombreCompleto,
+                Correo = dto.Correo,
+                Clave = dto.Clave
+            };
+        }
     }
 }

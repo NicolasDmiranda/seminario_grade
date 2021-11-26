@@ -20,7 +20,6 @@ namespace Cabana.Web.Controllers
         public IActionResult Index()
         {
             SetFullName();
-            var o = _usuarioService.Login(new BLL.Usuario.DataTransferObject.UsuarioDto { Clave = "", NombreUsuario = "" });
             return View();
         }
 

@@ -30,6 +30,20 @@ namespace Cabana.BLL.Usuario.BusinessImplement
                 return new SingleResponse<UsuarioDto> { IsValid = false, Mensaje="no existe boludo" };
             }
         }
-        //savechange
+        //Registro
+        public SingleResponse<UsuarioDto> Insert(UsuarioDto usuario)
+        {
+            try
+            {
+                var usuarioreg = _usuarioDao.Insert(UsuarioMappers.ToEntity(usuario));
+                _usuarioDao.SaveChanges();
+                return new SingleResponse<UsuarioDto> { IsValid = true, Model = UsuarioMappers.ToDto(usuarioreg) };
+            }
+            catch (Exception ex)
+            {
+                return new SingleResponse<UsuarioDto> { IsValid = false, Mensaje = "intentelo nuevamente" };
+            }
+           
+        }
     }
 }

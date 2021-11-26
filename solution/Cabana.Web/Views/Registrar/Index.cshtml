@@ -19,11 +19,11 @@
 </head>
 <body style="background: lightgray;">
     <div class="container text-center  d-flex justify-content-center py-5">
-        <form class="p-5 bg-light text-dark" action="" method="POST">
+        <form class="p-5 bg-light text-dark"asp-action="Registrar" asp-controller="Registrar" method="POST">
         <div class="form-group">
                 <h2 class="text-center">Crear Cuenta</h2>
                 <h3 class="text-center">de Usuario</h3><br>
-                <label for="usuario">Nombre:</label>
+                <label for="usuario">Nombre Completo:</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -32,7 +32,7 @@
                 </div>  
             </div>
             <div class="form-group">
-                <label for="usuario">Crear Usuario:</label>
+                <label for="usuario">Nombre de Usuario:</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -41,7 +41,16 @@
                 </div>  
             </div>
             <div class="form-group">
-                <label for="clave">Crear Contraseña:</label>
+                <label for="usuario">Correo Electronico:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  placeholder="Juan@gmail.com" name="EMAIL">
+                </div>  
+            </div>
+            <div class="form-group">
+                <label for="clave">Contraseña:</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -51,6 +60,12 @@
                 <a href="@Url.Action("Index","Login")" class="text-link">¿Ya tienes una cuenta? Iniciar Aquí.</a>   
             </div>
             <button type="submit" class="btn btn-info">Crear Cuenta</button>
+            @if(ViewBag.ErrorMessage != null)
+            {
+                <div class="form-group">
+                 @ViewBag.ErrorMessage
+            </div>
+            }
         </form>
     </div>
 </body>
