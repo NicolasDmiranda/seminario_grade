@@ -27,7 +27,7 @@ namespace Cabana.BLL.Usuario.BusinessImplement
             }
             else
             {
-                return new SingleResponse<UsuarioDto> { IsValid = false, Mensaje="no existe boludo" };
+                return new SingleResponse<UsuarioDto> { IsValid = false, Mensaje="No existe este usuario." };
             }
         }
         //Registro
