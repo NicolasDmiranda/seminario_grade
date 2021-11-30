@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cabana.BLL.Arriendo\Cabana.BLL.Arriendo.csproj" />
     <ProjectReference Include="..\Cabana.BLL.Ususario\Cabana.BLL.Usuario.csproj" />
   </ItemGroup>
 
