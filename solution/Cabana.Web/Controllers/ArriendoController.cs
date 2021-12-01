@@ -19,13 +19,13 @@ namespace Cabana.Web.Controllers
         [HttpPost]
         public IActionResult Arrendar(IFormCollection collection)
         {
-            var cabanaDto = new CabanaDto
+            var cabanaDto = new CabanaDto //d
             {
-                CabanaId = collection[""],
-                ModeloCabanaId=collection[""],
-                NumeroCabana=collection[""],
+                CabanaId = collection[""],,
+                ModeloCabanaId=collection[""],,
+                NumeroCabana=collection[""],,
                 FechaCreacion = DateTime.Now,
-                UsuarioCreacion = "admin"
+                UsuarioCreacion = "admin",
             };
         }
     }

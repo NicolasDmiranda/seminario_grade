@@ -24,7 +24,7 @@ namespace Cabana.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registrar(IFormCollection collection)
+        public IActionResult Registrar(IFormCollection collection) //
         {
             var usuarioDto = new UsuarioDto
             {
