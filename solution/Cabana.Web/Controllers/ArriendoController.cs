@@ -16,17 +16,13 @@ namespace Cabana.Web.Controllers
         {
             return View();
         }
-        //[HttpPost]
-       /* public IActionResult Arrendar(IFormCollection collection)
+        [HttpPost]
+       public IActionResult Arrendar(IFormCollection collection)
         {
             var cabanaDto = new CabanaDto
             {
-                CabanaId = collection[""],
-                ModeloCabanaId=collection[""],
-                NumeroCabana=collection[""],
-                FechaCreacion = DateTime.Now,
-                UsuarioCreacion = "admin"
+                
             };
-        }*/
+        }
     }
 }
