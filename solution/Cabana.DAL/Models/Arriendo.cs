@@ -18,5 +18,6 @@ namespace Cabana.DAL.Models
 
         public virtual Cabana Cabana { get; set; } = null!;
         public virtual Usuario Cliente { get; set; } = null!;
+        public List<int> CabanaIdList { get; set; }
     }
 }

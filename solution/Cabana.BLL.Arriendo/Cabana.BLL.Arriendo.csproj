@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cabana.BLL.Comun\Cabana.BLL.Comun.csproj" />
     <ProjectReference Include="..\Cabana.DAL\Cabana.DAL.csproj" />
   </ItemGroup>
 
