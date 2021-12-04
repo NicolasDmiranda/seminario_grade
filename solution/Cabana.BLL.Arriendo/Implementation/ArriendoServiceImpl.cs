@@ -34,7 +34,7 @@ namespace Cabana.BLL.Arriendo.Implementation
                     Dormitorios=4,
                     Estacionamiento= true,
                     Modelo = "Modelo 1",
-                    Valor= 100000,
+                    Valor= 50000,
                     Wifi = true
                 },
                 new ResultadoArriendoDto
