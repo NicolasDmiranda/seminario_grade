@@ -10,6 +10,6 @@ namespace Cabana.BLL.Arriendo.Interfaces
 {
     public interface IArriendoService
     {
-        SingleResponse<ResultadoArriendoDto> ResultadoArriendo(ResultadoArriendoDto arriendo);
+        ListResponse<ResultadoArriendoDto> ResultadoArriendo(DateTime fecInicio, DateTime fecFin);
     }
 }
