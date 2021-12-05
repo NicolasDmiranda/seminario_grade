@@ -30,7 +30,7 @@ namespace Cabana.BLL.Arriendo.Implementation
                     Banos = 1,
                     CabanaIdList = new List<int>{1,2,3},
                     Capacidad= 4,
-                    Descripcion= "Descripcion cabaña",
+                    Descripcion= "Descripcion cabaña 1",
                     Dormitorios=4,
                     Estacionamiento= true,
                     Modelo = "Modelo 1",

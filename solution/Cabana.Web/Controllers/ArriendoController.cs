@@ -16,13 +16,10 @@ namespace Cabana.Web.Controllers
         {
             return View();
         }
-      /*  [HttpPost]
-       public IActionResult Arrendar(IFormCollection collection)
+
+        public ActionResult ResultadoArriendoDto()
         {
-            var cabanaDto = new CabanaDto
-            {
-                
-            };
-        }*/
+            return View("View");
+        }
     }
 }

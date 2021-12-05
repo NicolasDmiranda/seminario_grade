@@ -78,13 +78,13 @@
                          <p>$5</p>
                     </td>
                      <td>
-                         <button type="button" class="btn btn-success">Arrendar</button>
+                         <button id="Filtrar" type="button" class="btn btn-success">Arrendar</button>
                     </td>
                 </tr>
             </table>
     </div>
   </div>
-  <script src="Scripts/jquery-1.10.2.min.js"></script>  
+ <!-- <script src="Scripts/jquery-1.10.2.min.js"></script>  
     <script>  
         $(document).ready(function () {  
             $.ajax({  
@@ -94,7 +94,18 @@
                 }  
             });  
         });  
-    </script> 
+    </script> -->
+    <script src="Scripts/jquery-1.10.2.min.js"></script>  
+    <script>  
+        $(document).ready(function () {  
+            $.ajax({  
+                url: "/test/testPartial",  
+                success: function (result) {  
+                    alert(result);  
+                }  
+            });  
+        });  
+    </script>
   </div>
   </div>
 
