@@ -10,7 +10,7 @@ namespace Cabana.Web.Controllers
     public class ArriendoController : Controller
     {
         private readonly ICabanaService _cabanaService;
-        private readonly IArriendoService _arriendoService;
+        private readonly ArriendoServiceImpl ResultadoArriendo;
         public ArriendoController()
         {
             _cabanaService = new CabanaServiceImpl();
@@ -27,8 +27,8 @@ namespace Cabana.Web.Controllers
        
         public ActionResult ResultadoBusquedaView()
         {
-            _arriendoService = new ArriendoServiceImpl();
-            return View(ResultadoBusquedaView);
+            ResultadoArriendo = new ArriendoServiceImpl();
+            return View(_arriendoService);
         }
     }
 }
