@@ -16,7 +16,7 @@ namespace Cabana.BLL.Arriendo.Implementation
             _arriendoDao = new GenericRepository<DAL.Models.Arriendo>();
         }
 
-        public ListResponse<ResultadoArriendoDto> ResultadoArriendo(DateTime fecInicio, DateTime fecFin)
+        public ListResponse<ResultadoArriendoDto> FiltrarArriendos(FiltroArriendoDto filter)
         {
             var response = new ListResponse<ResultadoArriendoDto>
             {

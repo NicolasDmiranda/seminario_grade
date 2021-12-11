@@ -10,25 +10,23 @@ namespace Cabana.Web.Controllers
     public class ArriendoController : Controller
     {
         private readonly ICabanaService _cabanaService;
-        private readonly ArriendoServiceImpl ResultadoArriendo;
+        private readonly IArriendoService _arriendoService;
         public ArriendoController()
         {
             _cabanaService = new CabanaServiceImpl();
+            _arriendoService = new ArriendoServiceImpl();
         }
+
         public IActionResult Index()
         {
             return View();
         }
-
-        public ActionResult ResultadoArriendoDto()
-        {
-            return View("View");
-        }
        
-        public ActionResult ResultadoBusquedaView()
+        public ActionResult FiltrarArriendos(FiltroArriendoDto filtro)
         {
-            ResultadoArriendo = new ArriendoServiceImpl();
-            return View(_arriendoService);
+            var resultado = _arriendoService.FiltrarArriendos(filtro);
+
+            return View("TablaArriendos", resultado.ResultList);
         }
     }
 }

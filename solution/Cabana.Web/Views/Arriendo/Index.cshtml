@@ -1,8 +1,5 @@
-﻿<!-- List<ResultadoBusquedaView>;-->
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    var busquedaArriendo = Url.Action("FiltrarArriendos","Arriendo");
 }
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -50,59 +47,38 @@
                 </tr>
                 <tr>
                     <td>
-                         <input type="date" />
+                         <input type="date" id="fechaInicio" />
                     </td>
                      <td>
-                         <input type="date" />
+                         <input type="date" id="fechaFin"/>
                     </td>
                      <td>
-                         <button type="button" class="btn btn-success">Buscar</button>
+                         <button type="button" id="btnBuscarArriendo" class="btn btn-success">Buscar</button>
                     </td>
                 </tr>
             </table>
             <br /><br />
             <h3>Resutados de Busqueda</h3>
-            <table class="table table-dark" id="resultado">
-                <tr>
-                    <th>Email</th>
-                    <th>Costo</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>
-                         <input type="text" />
-                    </td>
-                     <td>
-                         <p>$1</p>
-                    </td>
-                    <td>
-                         <p>$5</p>
-                    </td>
-                     <td>
-                         <button id="Filtrar" type="button" class="btn btn-success">Arrendar</button>
-                    </td>
-                </tr>
-            </table>
+            <div id="resultado-arriendo">
+            
+            </div>
     </div>
   </div>
- <!-- <script src="Scripts/jquery-1.10.2.min.js"></script>  
     <script>  
-        $(document).ready(function () {  
+        $("#btnBuscarArriendo").click(function () {
+            var filtro = {
+                FechaInicio: Date.parse($("#fechaInicio").val()),
+                FechaFin: Date.parse($("#fechaFin").val())
+            };
+
             $.ajax({  
-                url: "",  
+                url: "@busquedaArriendo",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({filtro: filtro}),
                 success: function (result) {  
-                    alert(result);  
-                }  
-            });  
-        });  
-    </script> -->
-    <script src="Scripts/jquery-1.10.2.min.js"></script>  
-    <script>  
-        $(document).ready(function () {  
-            $.ajax({  
-                url: "/test/testPartial",  
-                success: function (result) {  
-                    alert(result);  
+                    $("#resultado-arriendo").empty();
+                    $("#resultado-arriendo").append(result);
                 }  
             });  
         });  

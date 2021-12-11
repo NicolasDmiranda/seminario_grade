@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+@using Cabana.BLL.Arriendo.DataTransferObject
+@model List<ResultadoArriendoDto>
+
+<table class="table table-dark" id="resultado">
+                <tr>
+                    <th>Modelo</th>
+                    <th>Descripción</th>
+                    <th>Capacidad</th>
+                    <th>Valor</th>
+                    <th>Incluye</th>
+                    <th>Acciones</th>
+                </tr>
+    @foreach(var arriendo in Model)
+    {
+        <tr>
+                    <td>
+                         @arriendo.Modelo
+                    </td>
+                     <td>
+                         @arriendo.Descripcion
+                    </td>
+                    <td>
+                         @arriendo.Capacidad Personas
+                    </td>
+                     <td>
+                         $@arriendo.Valor
+                    </td>
+                    <td>
+                         Baños: @arriendo.Banos <br>
+                         Dormitorios: @arriendo.Dormitorios <br>
+                         Estacionamiento: @(arriendo.Estacionamiento ? "SI":"NO") <br>
+                         Wifi: @(arriendo.Wifi ? "SI":"NO")
+
+                    </td>
+                     <td>
+                         <input type="hidden" id="id-cabana" value="@string.Join(",",arriendo.CabanaIdList)" />
+                         <button id="arrendar" type="button" class="btn btn-success">Arrendar</button>
+                    </td>
+                </tr>
+    }
+    
+            </table>
