@@ -21,7 +21,7 @@ namespace Cabana.Web.Controllers
         {
             return View();
         }
-       
+
         public ActionResult FiltrarArriendos(FiltroArriendoDto filtro)
         {
             var resultado = _arriendoService.FiltrarArriendos(filtro);

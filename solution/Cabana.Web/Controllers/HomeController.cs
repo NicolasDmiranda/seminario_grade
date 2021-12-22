@@ -47,5 +47,9 @@ namespace Cabana.Web.Controllers
         {
             return View();
         }
+        public IActionResult Transb()
+        {
+            return View();
+        }
     }
 }

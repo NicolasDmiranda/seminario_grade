@@ -55,9 +55,12 @@
                      <td>
                          <button type="button" id="btnBuscarArriendo" class="btn btn-success">Filtrar</button>
                     </td>
+                    <td>
+                        <a href="@Url.Action("Index","Transb")" class="btn btn-danger">Transbank</a> 
+                    </td>
                 </tr>
             </table>
-            <br /><br />
+            <br /><br/>
             <h3>Resutados de Busqueda</h3>
             <div id="resultado-arriendo">
             </div>
@@ -65,21 +68,23 @@
   </div>
     <script>  
         $("#btnBuscarArriendo").click(function () {
+            debugger;
             var filtro = {
-                FechaInicio: Date.parse($("#fechaInicio").val()),
-                FechaFin: Date.parse($("#fechaFin").val())
+                FechaInicio:$("#fechaInicio").val(),
+                FechaFin:$("#fechaFin").val()
             };
-
+            
             $.ajax({  
                 url: "@busquedaArriendo",
                 type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify({filtro: filtro}),
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(filtro),
                 success: function (result) {  
                     $("#resultado-arriendo").empty();
                     $("#resultado-arriendo").append(result);
                 }  
-            });  
+            });
         });  
     </script>
   </div>
