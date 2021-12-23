@@ -68,14 +68,12 @@
   </div>
     <script>  
         $("#btnBuscarArriendo").click(function () {
-            debugger;
             var filtro = {
                 FechaInicio:$("#fechaInicio").val(),
                 FechaFin:$("#fechaFin").val()
             };
-            
             $.ajax({  
-                url: "@busquedaArriendo",
+                url: '@busquedaArriendo',
                 type: "POST",
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
